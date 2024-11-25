@@ -189,3 +189,63 @@ body:not(.scrolling) .container:has(.artist-card:hover) .artist-card:not(:hover)
     top: 0;
     left: 0;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-checkbox {
+    display: none;
+}
+
+.search-icon {
+    cursor: pointer;
+    z-index: 2;
+}
+
+.search-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text);
+}
+
+.search-input {
+    position: absolute;
+    right: 30px;
+    width: 0;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    background: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-checkbox:checked ~ .search-input {
+    width: 200px;
+    opacity: 1;
+    padding-right: 40px;
+    padding-left: 16px;
+    border: 1px solid var(--primary);
+    pointer-events: auto;
+}
